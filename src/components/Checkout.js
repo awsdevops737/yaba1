@@ -15,7 +15,7 @@ export default function Checkout({ user, totals, items, onPlace, go }) {
     e.preventDefault();
     if (!form.name || !/^\d{10}$/.test(form.phone) || !form.address || !/^\d{6}$/.test(form.pincode))
       return setError("Fill in your name, a 10-digit phone number, address and a 6-digit pincode.");
-    if (method === "upi" && !/^[\w.\-]+@[\w]+$/.test(upi)) return setError("Enter a valid UPI ID, for example name@bank.");
+    if (method === "upi" && !/^[\w.-]+@[\w]+$/.test(upi)) return setError("Enter a valid UPI ID, for example name@bank.");
     setError("");
     setStatus("processing");
 
